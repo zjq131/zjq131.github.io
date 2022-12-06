@@ -220,9 +220,9 @@ SecurityContextPersistenceFilter 与 UsernamePasswordAuthenticationFilter
 
 ##### 1.出现Java序列化异常：大概率是存储的类出现无法序列的属性对象
 
-- 例如权限对象：（将其取消序列化即可）
+例如权限对象：（将其取消序列化即可）
 
-- ```java
+```java
   @JSONField(serialize = false)
   List<GrantedAuthority> authorities;
   ```
@@ -253,7 +253,7 @@ SecurityContextPersistenceFilter 与 UsernamePasswordAuthenticationFilter
 
 ##### 1.接口：/  
 
-- ```json
+```json
   //获取该网站的基本信息
   getBlogHomeInfo(){...}
   {
@@ -513,7 +513,7 @@ SecurityContextPersistenceFilter 与 UsernamePasswordAuthenticationFilter
 
 ### 4.评论mapper
 
-- ```sql
+```sql
   //后台返回所有评论信息  （左连接则会产生左表字段均会显现，但右表只显现两表连接条件相同的结果，不匹配则为null）
   <select id="listCommentBackDTO" resultType="com.minzheng.blog.dto.CommentBackDTO">
           SELECT
@@ -550,7 +550,7 @@ SecurityContextPersistenceFilter 与 UsernamePasswordAuthenticationFilter
 
 ### 5.角色mapper
 
-- ```sql
+```sql
   //三表查询   mybatis 会自动封装查询到的结果   rr.resource_id, rm.menu_id （列表集合）
   <select id="listRoles" resultMap="RoleMap">
           SELECT
